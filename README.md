@@ -7,6 +7,7 @@
 - [📖 \[Bookstore\] ](#-bookstore-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
+    - [Tech Stack ](#tech-stack--1)
     - [Key Features ](#key-features-)
   - [🚀 Live Demo ](#-live-demo-)
   - [💻 Getting Started ](#-getting-started-)
@@ -32,31 +33,14 @@
 
 ### Tech Stack <a name="tech-stack"></a>
 
-<details>
-  <summary>HTML</summary>
-  <ul>
-    <li><a href="./template.html">Home page</a></li>
-  </ul>
-</details>
+### Tech Stack <a name="tech-stack"></a>
 
 <details>
-  <summary>CSS</summary>
+  <summary>Client</summary>
   <ul>
-    <li><a href="./index.css">Stylesheet</a></li>
-  </ul>
-</details>
-
-<details>
-<summary>JavaScript</summary>
-  <ul>
-    <li><a href="./index.js">JavaScript code</a></li>
-  </ul>
-</details>
-
-<details>
-<summary>React</summary>
-  <ul>
-    <li><a href="./index.js">React</a></li>
+    <li><a href="https://html.com/">HTML</a></li>
+    <li><a href="https://css.org/">CSS</a></li>
+    <li><a href="https://react.dev">React</a></li>
   </ul>
 </details>
 
