@@ -1,16 +1,29 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import BookList from '../components/Booklist';
 import BookForm from '../components/Bookform';
+import { addBook, removeBook } from '../redux/books/booksSlice';
 
 const HomePage = () => {
-  const [books, setBooks] = useState([]);
+  const dispatch = useDispatch();
+  const books = useSelector((state) => state.books);
+
+  const getNextItemId = () => {
+    if (books.length === 0) {
+      return 'item1';
+    }
+    const lastItemId = books[books.length - 1].id;
+    const lastItemNumber = parseInt(lastItemId.replace('item', ''), 10);
+    return `item${lastItemNumber + 1}`;
+  };
 
   const handleAddBook = (newBook) => {
-    setBooks([...books, { ...newBook, id: Date.now() }]);
+    const newBookWithId = { ...newBook, id: getNextItemId() };
+    dispatch(addBook(newBookWithId));
   };
 
   const handleDeleteBook = (bookId) => {
-    setBooks(books.filter((book) => book.id !== bookId));
+    dispatch(removeBook(bookId));
   };
 
   return (
