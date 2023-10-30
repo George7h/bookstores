@@ -86,13 +86,13 @@ Enter: > git clone git@github.com:George7h/bookstores.git in your terminal.
 
 ### Install
 
-Install this project with:
+Run the following command in the terminal to Install this project modules and dependencies:
 
 - > npm install
 
 ### Usage
 
-Run the following commands in the terminal:
+Run the following command in the terminal to start server and run project in the browser:
 
 - >npm start
 
