@@ -13,6 +13,7 @@
   - [💻 Getting Started ](#-getting-started-)
     - [Prerequisites](#prerequisites)
     - [Setup](#setup)
+    - [Install](#install)
     - [Usage](#usage)
     - [Run tests](#run-tests)
   - [👥 Authors ](#-authors-)
@@ -81,14 +82,18 @@ In order to run this project you need:
 
 Clone this repository to your desired folder:
 
-Enter: > git clone git@github.com:George7h/math-magician.git in your terminal.
+Enter: > git clone git@github.com:George7h/bookstores.git in your terminal.
 
+### Install
+
+Install this project with:
+
+- > npm install
 
 ### Usage
 
 Run the following commands in the terminal:
 
-- > npm install
 - >npm start
 
 The browser will automatically open the website.
