@@ -10,6 +10,7 @@ const categoriesSlice = createSlice({
       if (state.length === 0) {
         return 'Under construction';
       }
+      return 'Categories are available';
     },
   },
 });
