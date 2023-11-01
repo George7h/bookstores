@@ -5,7 +5,7 @@ import Book from './book';
 const BookList = ({ books, onDelete }) => (
   <div className="book-list">
     {books.map((book) => (
-      <Book key={book.id} book={book} onDelete={onDelete} />
+      <Book key={book.item_id} book={book} onDelete={() => onDelete(book.item_id)} />
     ))}
   </div>
 );
@@ -15,7 +15,6 @@ BookList.propTypes = {
     PropTypes.shape({
       title: PropTypes.string.isRequired,
       author: PropTypes.string.isRequired,
-      id: PropTypes.number.isRequired,
     }),
   ).isRequired,
   onDelete: PropTypes.func.isRequired,

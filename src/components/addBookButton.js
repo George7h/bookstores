@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const AddBookButton = ({ onClick }) => (
-  <button type="button" onClick={onClick}>
-    Add Book
+  <button type="button" className="addButton" onClick={onClick}>
+    ADD BOOK
   </button>
 );
 
