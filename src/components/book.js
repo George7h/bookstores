@@ -42,7 +42,7 @@ const Book = ({ book, onDelete }) => (
       <h5 id="chapter">
         Chapter six
       </h5>
-      <button type="button" className="addButton">Update Progress</button>
+      <button type="button" className="updateprogressbtn">Update Progress</button>
     </div>
   </div>
 );
