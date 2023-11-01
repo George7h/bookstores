@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import AddBookButton from './addBookButton';
 
 const BookForm = ({ onAdd }) => {
   const [title, setTitle] = useState('');
@@ -36,7 +37,7 @@ const BookForm = ({ onAdd }) => {
         value={category}
         onChange={(e) => setCategory(e.target.value)}
       />
-      <button type="submit">Add Book</button>
+      <AddBookButton onClick={handleSubmit} />
     </form>
   );
 };

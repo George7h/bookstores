@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import DeleteBookButton from './deleteBookButton';
 
 const Book = ({ book, onDelete }) => (
   <div className="book">
@@ -12,9 +13,7 @@ const Book = ({ book, onDelete }) => (
       Category:
       {book.category}
     </p>
-    <button type="button" onClick={() => onDelete(book.id)}>
-      Delete
-    </button>
+    <DeleteBookButton onClick={onDelete} bookId={book.id} />
   </div>
 );
 
