@@ -4,16 +4,22 @@ import DeleteBookButton from './deleteBookButton';
 
 const Book = ({ book, onDelete }) => (
   <div className="book">
-    <h3>{book.title}</h3>
+    <p>
+      Title:
+      {' '}
+      {book.title}
+    </p>
     <p>
       Author:
+      {' '}
       {book.author}
     </p>
     <p>
       Category:
+      {' '}
       {book.category}
     </p>
-    <DeleteBookButton onClick={onDelete} bookId={book.id} />
+    <DeleteBookButton onClick={onDelete} itemId={book.item_id} />
   </div>
 );
 
@@ -22,7 +28,7 @@ Book.propTypes = {
     title: PropTypes.string.isRequired,
     author: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired,
-    id: PropTypes.number.isRequired,
+    item_id: PropTypes.string.isRequired,
   }).isRequired,
   onDelete: PropTypes.func.isRequired,
 };
