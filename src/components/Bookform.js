@@ -38,11 +38,11 @@ const BookForm = ({ onAdd }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h4>ADD NEW BOOK</h4>
+
       <input
         className="titleInput"
         type="text"
-        placeholder="Title"
+        placeholder="Book title"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
       />

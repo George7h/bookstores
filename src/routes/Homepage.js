@@ -25,6 +25,7 @@ const HomePage = () => {
     <div className="container">
       <BookList books={books} onDelete={handleDeleteBook} />
       <div className="seperator" />
+      <h4 id="addnewbook">ADD NEW BOOK</h4>
       <BookForm onAdd={handleAddBook} />
     </div>
   );
