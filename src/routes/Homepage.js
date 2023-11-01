@@ -1,29 +1,24 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { fetchBooks, removeBook, addBook } from '../redux/books/booksSlice';
 import BookList from '../components/Booklist';
 import BookForm from '../components/Bookform';
-import { addBook, removeBook } from '../redux/books/booksSlice';
 
 const HomePage = () => {
   const dispatch = useDispatch();
-  const books = useSelector((state) => state.books);
+  const books = useSelector((state) => state.books.books);
 
-  const getNextItemId = () => {
-    if (books.length === 0) {
-      return 'item1';
-    }
-    const lastItemId = books[books.length - 1].id;
-    const lastItemNumber = parseInt(lastItemId.replace('item', ''), 10);
-    return `item${lastItemNumber + 1}`;
+  useEffect(() => {
+    dispatch(fetchBooks());
+  }, [dispatch]);
+
+  const handleAddBook = (book) => {
+    dispatch(addBook({ book }));
   };
-
-  const handleAddBook = (newBook) => {
-    const newBookWithId = { ...newBook, id: getNextItemId() };
-    dispatch(addBook(newBookWithId));
-  };
-
-  const handleDeleteBook = (bookId) => {
-    dispatch(removeBook(bookId));
+  // eslint-disable-next-line camelcase
+  const handleDeleteBook = (item_id) => {
+  // eslint-disable-next-line camelcase
+    dispatch(removeBook({ itemId: item_id }));
   };
 
   return (

@@ -5,17 +5,36 @@ import AddBookButton from './addBookButton';
 const BookForm = ({ onAdd }) => {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
-  const [category, setCategory] = useState('');
+  const [category, setCategory] = useState(''); // Initialize with an empty string
+
+  const generateItemId = () => `item_${Date.now()}`;
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (title && author && category) {
-      onAdd({ title, author, category });
+      // eslint-disable-next-line
+      const item_id = generateItemId();
+      onAdd({
+        // eslint-disable-next-line
+        item_id, title, author, category,
+      });
       setTitle('');
       setAuthor('');
       setCategory('');
     }
   };
+
+  const categoryOptions = [
+    'Action',
+    'Comedy',
+    'Fantasy',
+    'Drama',
+    'Horror',
+    'Suspense',
+    'Thriller',
+    'Crime',
+    'Kids',
+  ];
 
   return (
     <form onSubmit={handleSubmit}>
@@ -31,12 +50,17 @@ const BookForm = ({ onAdd }) => {
         value={author}
         onChange={(e) => setAuthor(e.target.value)}
       />
-      <input
-        type="text"
-        placeholder="Category"
+      <select
         value={category}
         onChange={(e) => setCategory(e.target.value)}
-      />
+      >
+        <option value="">Category</option>
+        {categoryOptions.map((categoryOption) => (
+          <option key={categoryOption} value={categoryOption}>
+            {categoryOption}
+          </option>
+        ))}
+      </select>
       <AddBookButton onClick={handleSubmit} />
     </form>
   );
