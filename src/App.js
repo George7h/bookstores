@@ -4,22 +4,24 @@ import {
 } from 'react-router-dom';
 import HomePage from './routes/Homepage';
 import CategoriesPage from './routes/Category';
+import './App.css';
 
 const App = () => (
   <Router>
     <div className="app">
       <nav>
-        <div className="appName">
-          <h1>Bookstore</h1>
-        </div>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
+        <ul className="nav-list">
+          <li className="appName"><h3>Bookstore CMS</h3></li>
+          <li className="nav-link">
+            <Link to="/">BOOKS</Link>
           </li>
-          <li>
-            <Link to="/categories">Categories</Link>
+          <li className="nav-link">
+            <Link to="/categories">CATEGORIES</Link>
           </li>
         </ul>
+        <span className="material-symbols-outlined">
+          account_circle
+        </span>
       </nav>
       <Routes>
         <Route path="/" element={<HomePage />} />

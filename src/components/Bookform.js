@@ -38,19 +38,23 @@ const BookForm = ({ onAdd }) => {
 
   return (
     <form onSubmit={handleSubmit}>
+      <h4>ADD NEW BOOK</h4>
       <input
+        className="titleInput"
         type="text"
         placeholder="Title"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
       />
       <input
+        className="authorInput"
         type="text"
         placeholder="Author"
         value={author}
         onChange={(e) => setAuthor(e.target.value)}
       />
       <select
+        className="dropdown"
         value={category}
         onChange={(e) => setCategory(e.target.value)}
       >
